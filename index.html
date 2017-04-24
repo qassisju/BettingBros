@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Secret Santa</title>
+</head>
+<body>
+
+
+  <header>
+    <div class="container">
+    <div id="signInForm">
+    <input type="email" id="emailInput" placeholder="Email">
+    <input type="password" id="passwordInput" placeholder="password">
+    <button id="signInButton">Sign In</button>
+    <a href="#" id="showSignUp">Create Account</a>
+  </div>
+</div>
+  <div id="signOut">
+    <h1> Hi <span id="displayName"></span></h1>
+    <button id="signOutButton">Sign Out</button>
+  </div>
+  <div id="signUpForm">
+    <input type="text" id="newName" placeholder="Name">
+  <input type="email" id="newEmail" placeholder="Email">
+  <input type="password" id="newPassword" placeholder="password">
+  <button id="signUpButton">Sign up</button>
+  <a href="#" id="showSignIn">Back to Login </a>
+</div>
+  </header>
+  <div id="signedIn">
+    <input type="text" id="nameInput" placeholder="name">
+    <input type="text" id="prediction" placeholder="prediction">
+    <button id="submitButton">Submit</button>
+
+    <div id="predictions">
+    </div>
+  </div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script src="app.js"></script>
+
+
+
+<!---
+<form action="app.js">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="email" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" id="submitButton">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+--->
+
+</body>
+</html>

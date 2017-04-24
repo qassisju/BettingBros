@@ -12,6 +12,7 @@ var config = {
   messagingSenderId: '793554451571'
 }
 firebase.initializeApp(config)
+var currentDate = document.getElementById('dateInput')
 var nameInput = document.getElementById('nameInput')
 var prediction = document.getElementById('prediction')
 var submit = document.getElementById('submitButton')
@@ -20,23 +21,28 @@ function newPrediction () {
   firebase.database().ref('predictions').push({
     name: nameInput.value,
     prediction: prediction.value,
-    date: new Date().getTime()
+    date: currentDate.value
   })
 }
 firebase.auth().onAuthStateChanged(function (user) {
+  var newPredictions = document.getElementById('predictions')
   if (user) {
+
+    document.getElementById('predictions').style.display = 'block'
     document.getElementById('displayName').textContent = user.displayName
     document.getElementById('signedIn').style.display = 'block'
     document.getElementById('signInForm').style.display = 'none'
     document.getElementById('signOut').style.display = 'block'
     document.getElementById('signUpForm').style.display = 'none'
-    var newPredictions = document.getElementById('predictions')
     submit.addEventListener('click', newPrediction)
     firebase.database().ref('predictions').on('child_added', function (predictionSnapshot) {
       var result = predictionSnapshot.val()
-      newPredictions.innerHTML = newPredictions.innerHTML + '<p>' + result.name + '</p>' + result.prediction + 
+      newPredictions.innerHTML = newPredictions.innerHTML + '<div class="predictionRow">' + '<span class="nameColumn">' + result.name + '</span>' + '<span class="predictionColumn">' + result.prediction + '</span>' + '<span class="dateColumn">' + result.date + '</span>' + '</div>'
     })
   } else {
+    firebase.database().ref('predictions').off('child_added')
+    newPredictions.innerHTML = ' '
+    document.getElementById('predictions').style.display = 'none'
     document.getElementById('signedIn').style.display = 'none'
     document.getElementById('signInForm').style.display = 'block'
     document.getElementById('signOut').style.display = 'none'
@@ -62,6 +68,7 @@ signIn.addEventListener('click', function () {
 })
 signOut.addEventListener('click', function () {
   firebase.auth().signOut()
+
 })
 createAccount.addEventListener('click', function () {
   document.getElementById('signInForm').style.display = 'none'

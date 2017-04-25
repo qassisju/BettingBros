@@ -85,6 +85,7 @@ input[type=date] {
 .predictionColumn {
   padding-right: 30px;
 }
+
 #submitButton {
   border: 0;
   margin: 0;
@@ -102,4 +103,26 @@ input[type=date] {
   text-shadow: none;
   position: relative;
   text-decoration: none;
+}
+
+#signOutButton {
+  border: 0;
+  margin: 0;
+  text-align: center;
+  border-radius: 4px;
+  padding: 14px 32px;
+  border-color: black;
+  cursor: pointer;
+  height: 40px;
+  display: inline-block;
+  font-size: 10px;
+  font-family: Slack-Lato, sans-serif;
+  font-weight: 700;
+  background-color: #42c299;
+  color: #fff !important;
+  text-shadow: none;
+  position: relative;
+  text-decoration: none;
+  left: 90%;
+  bottom: 105px;
 }

@@ -27,7 +27,6 @@ function newPrediction () {
 firebase.auth().onAuthStateChanged(function (user) {
   var newPredictions = document.getElementById('predictions')
   if (user) {
-
     document.getElementById('predictions').style.display = 'block'
     document.getElementById('displayName').textContent = user.displayName
     document.getElementById('signedIn').style.display = 'block'

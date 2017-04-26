@@ -20,12 +20,11 @@ h1 {
 }
 
 #signInForm {
-  padding-top: 300px;
+  padding-top: 50px;
   text-align: center;
   display: block;
-  background: #CEC1B1;
+  background: #cec1b1;
   margin: 0 auto;
-
 }
 
 #signInButton {
@@ -125,4 +124,12 @@ input[type=date] {
   text-decoration: none;
   left: 90%;
   bottom: 105px;
+}
+
+#signUpForm {
+  padding-top: 50px;
+  text-align: center;
+  display: block;
+  background: #cec1b1;
+  margin: 0 auto;
 }
